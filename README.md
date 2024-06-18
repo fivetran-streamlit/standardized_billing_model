@@ -36,10 +36,10 @@ A few example reports were generated from the denormalized `line_item_enhanced` 
 
 | **Report** | **Description** |
 |----------|-----------------|
-| [Current Period Revenue Metrics](/billing_report#current-period-revenue-metrics) | Showcases total and averages of key revenue metrics as well as monthly revenue and MRR over time. |
-| [Subscription Metrics](/billing_report#subscription-metrics) | Highlights subscription activity in total and over time. | 
-| [Revenue Analysis by Product](/billing_report#revenue_analysis_by_product) | Breakdown of total revenue by product type or product name as well as the same breakdown over time. | 
-| [Customer Analysis](/billing_report#customer_analysis) | Analyzes customer lifetime value, average revenue per customer, and overall churn rate.  | 
+| [Current Period Revenue Metrics](https://fivetran-standardized-billing-model.streamlit.app/billing_report#current-period-revenue-metrics) | Showcases total and averages of key revenue metrics as well as monthly revenue and MRR over time. |
+| [Subscription Metrics](https://fivetran-standardized-billing-model.streamlit.app/billing_report#subscription-metrics) | Highlights subscription activity in total and over time. | 
+| [Revenue Analysis by Product](https://fivetran-standardized-billing-model.streamlit.app/billing_report#revenue-analysis-by-product) | Breakdown of total revenue by product type or product name as well as the same breakdown over time. | 
+| [Customer Analysis](https://fivetran-standardized-billing-model.streamlit.app/billing_report#customer-analysis) | Analyzes customer lifetime value, average revenue per customer, and overall churn rate.  | 
 
 ## 🎯 Call to Action
 As mentioned, this report and the denormalized `line_item_enhanced` model are very much a work in progress and in the initial feedback phase. It would be much appreciated if you can take the time to review the schema and example reports and provide your feedback and suggestions using our [Google Feedback Form](https://forms.gle/rSRXxM6SLyDU9Am47). When you submit feedback via the form provided, you enter yourself for a chance to win a Fivetran Open Source Contributor hat (limited to those residing in the continental US)! Thank you!

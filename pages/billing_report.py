@@ -322,6 +322,9 @@ if d is not None and len(d) == 2:
             # Sort by total_amount in descending order
             revenue_by_category = revenue_by_category.sort_values(by='total_amount', ascending=False)
 
+            # Format the text labels
+            formatted_revenue = revenue_by_category['total_amount'].map(lambda x: f"{x:,.2f}")
+
             # Plot bar chart
             fig = px.bar(
                 revenue_by_category,
@@ -329,7 +332,8 @@ if d is not None and len(d) == 2:
                 y='total_amount',
                 title=f'Total Revenue by {category.capitalize()}',
                 labels={category: category.capitalize(), 'total_amount': 'Total Revenue ($)'},
-                template='plotly_white'
+                template='plotly_white',
+                text=formatted_revenue
             )
 
             # Customize layout
@@ -339,6 +343,8 @@ if d is not None and len(d) == 2:
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
             )
+
+            fig.update_traces(textposition='outside')
 
             return fig
 
@@ -350,6 +356,9 @@ if d is not None and len(d) == 2:
             # Group by month and sum total revenue
             monthly_revenue = data_filtered.groupby(data_filtered['created_at'].dt.to_period('M').astype(str))['total_amount'].sum().reset_index()
 
+            # Format the text labels
+            formatted_monthly_revenue = monthly_revenue['total_amount'].map(lambda x: f"{x:,.2f}")
+
             # Plot bar chart
             fig = px.bar(
                 monthly_revenue,
@@ -357,7 +366,8 @@ if d is not None and len(d) == 2:
                 y='total_amount',
                 title=f'Monthly Revenue for {selected_item}',
                 labels={'created_at': 'Month', 'total_amount': 'Total Revenue ($)'},
-                template='plotly_white'
+                template='plotly_white',
+                text=formatted_monthly_revenue
             )
 
             # Customize layout
@@ -367,6 +377,8 @@ if d is not None and len(d) == 2:
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
             )
+
+            fig.update_traces(textposition='outside')
 
             return fig
 
@@ -462,6 +474,8 @@ if d is not None and len(d) == 2:
             # Plot revenue over time
             data_date_filtered['created_at_month'] = data_date_filtered['created_at'].dt.to_period('M').dt.to_timestamp()
             revenue_over_time = data_date_filtered.groupby('created_at_month')['total_amount'].sum().reset_index()
+            # Format the text labels
+            formatted_revenue = revenue_over_time['total_amount'].map(lambda x: f"{x:,.2f}")
             fig_revenue_over_time = px.line(
                 revenue_over_time,
                 x='created_at_month',
@@ -470,6 +484,11 @@ if d is not None and len(d) == 2:
                 labels={'created_at_month': 'Month', 'total_amount': 'Total Revenue ($)'},
                 template='plotly_white'
             )
+            fig_revenue_over_time.update_traces(
+                text=formatted_revenue,
+                textposition="top center",
+                mode='lines+markers+text'
+            )
             fig_revenue_over_time.update_layout(
                 xaxis_title='Month',
                 yaxis_title='Total Revenue ($)',
@@ -477,9 +496,12 @@ if d is not None and len(d) == 2:
                 paper_bgcolor='rgba(0,0,0,0)',
             )
             st.plotly_chart(fig_revenue_over_time, use_container_width=True)
+
         with col14:
             # Plot active customers over time
             active_customers = data_date_filtered.groupby('created_at_month')['customer_id'].nunique().reset_index()
+            # Format the text labels
+            formatted_customers = active_customers['customer_id'].map(lambda x: f"{x:,}")
             fig_active_customers_over_time = px.line(
                 active_customers,
                 x='created_at_month',
@@ -487,6 +509,11 @@ if d is not None and len(d) == 2:
                 title='Active Customers Over Time',
                 labels={'created_at_month': 'Month', 'customer_id': 'Number of Active Customers'},
                 template='plotly_white'
+            )
+            fig_active_customers_over_time.update_traces(
+                text=formatted_customers,
+                textposition="top center",
+                mode='lines+markers+text'
             )
             fig_active_customers_over_time.update_layout(
                 xaxis_title='Month',
