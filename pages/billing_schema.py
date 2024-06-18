@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",  # Optionally expand the sidebar initially
 )
 
-st.title("Common Billing Model Schema Overview")
+st.title("Standardized Billing Line Item Model Schema Overview")
 billing_data = query_results(destination="BigQuery")
 
 # Convert 'created_at' column to datetime if it's not already in datetime format
