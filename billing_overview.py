@@ -3,7 +3,7 @@ import streamlit as st
 # Set the page configuration to wide mode
 st.set_page_config(layout="wide")
 
-standard_framework_url = "https://github.com/fivetran-streamlit/standardized_billing_model/blob/main/src/standard-framework.png?raw=true"
+standard_framework_url = "https://github.com/fivetran-streamlit/standardized_billing_model/blob/main/src/standardized-framework.png?raw=true"
 hat_url = "https://github.com/fivetran-streamlit/standardized_billing_model/blob/main/src/fivetran-hat.png?raw=true"
 
 part1 = """

@@ -6,7 +6,7 @@ Over the years, the Fivetran Analytics Engineering team has been building analyt
 - Standardized analytics-ready templates for each business domain
 - Common data models for entities (e.g. define the customer, product, transaction models)
 
-![example plan](src/standard-framework.png)
+![example plan](src/standardized-framework.png)
 
 To ensure the above strategy would be useful for Fivetran customers, we have decided to take a focused approach and begin with defining an initial standardized analytics-ready model for the Billing domain with the `line_item_enhanced` model. This `line_item_enhanced` model standardizes the denormalized invoice/order line item table containing revenue details and enriched with subscription, product, and customer information. Standardizing the model intended for the reporting process enures that Fivetran users have a consistent experience regardless of which billing platform they are using. This enhances usability and efficiency, making it easier for businesses to manage and analyze their billing data regardless of the specific platform. 
 
