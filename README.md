@@ -32,7 +32,7 @@ packages:
 This Streamlit app showcases the denormalized `line_item_enhanced` model. The model was designed to capture the widest range of revenue activities within the above mentioned supported billing platform sources. For a comprehensive overview of the `line_item_enhanced` schema and field definitions, you can refer to the [billing_schema](/billing_schema) tab. Some opinionated decisions were made in order to ensure uniformity of the schema across platforms.
 
 ## 📈 Example reports
-A few example reports were generated from the denormalized `line_item_enhanced` data model within this Streamlit app. These example reports can be found within the [bill_report](/billing_report) tab. For details around each section in the billing_report, see the descriptions below.
+A few example reports were generated from the denormalized `line_item_enhanced` data model within this Streamlit app using fake data generated to simulate the billing platform of the fictional Dunder Mifflin company. These example reports can be found within the [bill_report](/billing_report) tab. For details around each section in the billing_report, see the descriptions below.
 
 | **Report** | **Description** |
 |----------|-----------------|
