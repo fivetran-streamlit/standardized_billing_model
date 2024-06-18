@@ -218,8 +218,10 @@ if d is not None and len(d) == 2:
         # Step 2: Filter active subscriptions
         active_subscriptions = data_date_filtered[data_date_filtered['subscription_period_ended_at'] > max_created_at]
 
-        # Step 3: Count unique subscription_id for active subscriptions
-        active_subscriptions_count = active_subscriptions['subscription_id'].nunique()
+        current_month = datetime.now().month
+        active_subscriptions_current_month = active_subscriptions[active_subscriptions['subscription_period_ended_at'].dt.month == current_month]
+
+        active_subscriptions_count_current_month = active_subscriptions_current_month['subscription_id'].nunique()
 
         # Step 4: Filter canceled subscriptions
         canceled_subscriptions = data_date_filtered[(data_date_filtered['subscription_period_ended_at'].notnull()) & 
@@ -235,10 +237,10 @@ if d is not None and len(d) == 2:
             st.metric(label="Total Subscriptions", value=f"{subscriptions_total:,.0f}")
 
         with col2:
-            st.metric(label="Current Active Subscriptions", value=f"{active_subscriptions_count:,.0f}")
+            st.metric(label="Current Period Active Subscriptions", value=f"{active_subscriptions_count_current_month:,.0f}")
 
         with col3:
-            st.metric(label="Canceled/Expired Subscriptions", value=f"{canceled_subscriptions_count:,.0f}")
+            st.metric(label="Total Canceled/Expired Subscriptions", value=f"{canceled_subscriptions_count:,.0f}")
 
         with col4:
             st.metric(label="Average Subscription Amount", value=f"${payments_total:,.2f}")
