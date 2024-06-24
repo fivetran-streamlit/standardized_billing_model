@@ -35,7 +35,6 @@ schema = {
     "record_type": "Either 'header' or 'line_item' to differentiate if the record is originally from the line item table or was created to document information only available at the header level.",
     "created_at": "Date the line item entry was created.",
     "currency": "Determines the currency in which the transaction took place.",
-    "line_item_status": "Indicates the status of the line item. Eg. posted, pending, returned.",
     "header_status": "Indicates the status of the header. Eg. paid, voided, returned.",
     "product_id": "ID of the product associated with the line item.",
     "product_name": "Name of the product associated with the line item.",
