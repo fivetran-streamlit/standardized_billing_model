@@ -1,5 +1,11 @@
 # ⚠️ Work In Progress ⚠️
 # Standardized Fivetran Billing Model
+## 📕 TL;DR
+- The Fivetran Analytics Engineering team is exploring standardized analytics templates, starting with the Billing domain.
+- The `line_item_enhanced` model standardizes revenue data for consistent reporting.
+- Example reports within this app include revenue, subscriptions, products, and customer metrics built using the `line_item_enhanced` model.
+- We need your feedback as it is crucial for us refining our approach.
+
 ## 📣 Overview
 Over the years, the Fivetran Analytics Engineering team has been building analytics-ready templates for Fivetran connectors to ensure Fivetran customers are able to get the most value from their data as quickly as possible. As a result of making these out-of-the-box analytics templates we understand that each business domain (e.g. Billing, Finance, Ads, Marketing, etc.) typically result in the same reporting needs. Therefore, we are embarking on a journey to provide:
 
@@ -8,7 +14,7 @@ Over the years, the Fivetran Analytics Engineering team has been building analyt
 
 ![example plan](src/standardized-framework.png)
 
-To ensure the above strategy would be useful for Fivetran customers, we have decided to take a focused approach and begin with defining an initial standardized analytics-ready model for the Billing domain with the `line_item_enhanced` model. This `line_item_enhanced` model standardizes the denormalized invoice/order line item table containing revenue details and enriched with subscription, product, and customer information. Standardizing the model intended for the reporting process enures that Fivetran users have a consistent experience regardless of which billing platform they are using. This enhances usability and efficiency, making it easier for businesses to manage and analyze their billing data regardless of the specific platform. 
+To ensure the above strategy would be useful for Fivetran customers, we have decided to take a focused approach and begin with defining an initial standardized analytics-ready model for the Billing domain with the `line_item_enhanced` model. This `line_item_enhanced` model standardizes the denormalized invoice/order line item table containing revenue details and enriched with subscription, product, and customer information. Standardizing the model intended for the reporting process enures that Fivetran users have a consistent experience regardless of which billing platform they're using. This enhances usability and efficiency, making it easier for businesses to manage and analyze their billing data regardless of the specific platform. 
 
 The initial plan is for the `line_item_enhanced` model to standardize the line item analytics layer for the following Fivetran billing platform connectors: 
 - Stripe
@@ -42,6 +48,4 @@ A few example reports were generated from the denormalized `line_item_enhanced` 
 | [Customer Analysis](https://fivetran-standardized-billing-model.streamlit.app/billing_report#customer-analysis) | Analyzes customer lifetime value, average revenue per customer, and overall churn rate.  | 
 
 ## 🎯 Call to Action
-As mentioned, this report and the denormalized `line_item_enhanced` model are very much a work in progress and in the initial feedback phase. It would be much appreciated if you can take the time to review the schema and example reports and provide your feedback and suggestions using our [Google Feedback Form](https://forms.gle/rSRXxM6SLyDU9Am47). When you submit feedback via the form provided, you enter yourself for a chance to win a Fivetran Open Source Contributor hat (limited to those residing in the continental US)! Thank you!
-
-![Fivetran Hat](src/fivetran-hat.png)
+As mentioned, this report and the denormalized `line_item_enhanced` model are very much a work in progress and in the initial feedback phase. It would be much appreciated if you can take the time to review the schema and example reports and provide your feedback and suggestions using our [Google Feedback Form](https://forms.gle/rSRXxM6SLyDU9Am47). Thank you!

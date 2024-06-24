@@ -9,6 +9,12 @@ hat_url = "https://github.com/fivetran-streamlit/standardized_billing_model/blob
 part1 = """
 # ⚠️ Work In Progress ⚠️
 # Standardized Fivetran Billing Model
+## 📕 TL;DR
+- The Fivetran Analytics Engineering team is exploring standardized analytics templates, starting with the Billing domain.
+- The `line_item_enhanced` model standardizes revenue data for consistent reporting.
+- Example reports within this app include revenue, subscriptions, products, and customer metrics built using the `line_item_enhanced` model.
+- We need your feedback as it is crucial for us refining our approach.
+
 ## 📣 Overview
 Over the years, the Fivetran Analytics Engineering team has been building analytics-ready templates for Fivetran connectors to ensure Fivetran customers are able to get the most value from their data as quickly as possible. As a result of making these out-of-the-box analytics templates we understand that each business domain (e.g. Billing, Finance, Ads, Marketing, etc.) typically result in the same reporting needs. Therefore, we are embarking on a journey to provide:
 
@@ -51,10 +57,9 @@ A few example reports were generated from the denormalized `line_item_enhanced` 
 | [Customer Analysis](https://fivetran-standardized-billing-model.streamlit.app/billing_report#customer-analysis) | Analyzes customer lifetime value, average revenue per customer, and overall churn rate.  | 
 
 ## 🎯 Call to Action
-As mentioned, this report and the denormalized `line_item_enhanced` model are very much a work in progress and in the initial feedback phase. It would be much appreciated if you can take the time to review the schema and example reports and provide your feedback and suggestions using our [Google Feedback Form](https://forms.gle/rSRXxM6SLyDU9Am47). When you submit feedback via the form provided, you enter yourself for a chance to win a Fivetran Open Source Contributor hat (limited to those residing in the continental US)! Thank you!
+As mentioned, this report and the denormalized `line_item_enhanced` model are very much a work in progress and in the initial feedback phase. It would be much appreciated if you can take the time to review the schema and example reports and provide your feedback and suggestions using our [Google Feedback Form](https://forms.gle/rSRXxM6SLyDU9Am47). Thank you!
 """
 
 st.markdown(part1)
 st.image(standard_framework_url, caption='Proposed Standard Framework')
 st.markdown(part2)
-st.image(hat_url, caption='Fivetran Hat')
