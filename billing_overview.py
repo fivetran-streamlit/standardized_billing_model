@@ -34,13 +34,25 @@ packages:
     revision: feature/standardized-billing-line-item-model
     warn-unpinned: false
 ```
-- Shopify 
-    - Not ready
 - Recurly
-    - Not ready
+    - [PR ready](https://github.com/fivetran/dbt_recurly/pull/26). If you have your own dbt project and use Recurly, you can test this out by adding the following to your `packages.yml` and running the `recurly__line_item_enhanced` model. Feel free to leave any comments or suggestions on the [PR](https://github.com/fivetran/dbt_recurly/pull/26).
+```yml
+packages:
+  - git: https://github.com/fivetran/dbt_recurly.git
+    revision: feature/standardized-billing-line-item-model
+    warn-unpinned: false
+```
+- Zuora
+    - [PR ready](https://github.com/fivetran/dbt_zuora/pull/13). If you have your own dbt project and use Zuora, you can test this out by adding the following to your `packages.yml` and running the `zuora__line_item_enhanced` model. Feel free to leave any comments or suggestions on the [PR](https://github.com/fivetran/dbt_zuora/pull/13).
+```yml
+packages:
+  - git: https://github.com/fivetran/dbt_zuora.git
+    revision: feature/standardized-billing-line-item-model
+    warn-unpinned: false
+```
 - Recharge
     - Not ready
-- Zuora
+- Shopify 
     - Not ready
 
 ## 📄 Line Item Enhanced Standardized Schema
